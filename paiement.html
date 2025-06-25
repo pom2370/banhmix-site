@@ -2,187 +2,74 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Paiement - Banh'Mix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #fffaf3;
+      background: #fff8f1;
+      padding: 30px;
       margin: 0;
-      padding: 20px;
+      color: #333;
     }
-    h1 {
+    h1, h2 {
       text-align: center;
-      color: #d35400;
+      color: #c0392b;
     }
-    form {
-      max-width: 700px;
-      margin: auto;
-      background: #fff;
+    .recap {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    label {
-      font-weight: bold;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+    }
+    ul li:last-child {
+      border: none;
+    }
+    .valider {
       display: block;
-      margin-top: 15px;
-    }
-    input[type=radio], input[type=checkbox] {
-      margin-right: 10px;
-    }
-    select, input[type=text], input[type=number] {
-      padding: 8px;
-      width: 100%;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-top: 5px;
-    }
-    .section {
-      margin-top: 20px;
-    }
-    .total {
-      font-size: 1.3em;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 20px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px;
-      background: #e67e22;
+      margin: 30px auto;
+      padding: 12px 30px;
+      background-color: #c0392b;
       color: white;
       border: none;
-      border-radius: 6px;
-      font-size: 1em;
+      font-size: 16px;
+      border-radius: 8px;
       cursor: pointer;
-      width: 100%;
-    }
-    button:hover {
-      background: #d35400;
     }
   </style>
 </head>
 <body>
-  <h1>Récapitulatif et Paiement</h1>
-  
-
-<div id="recapitulatif" class="section">
-  <h2>Récapitulatif de la commande</h2>
-  <div id="image-banhmi" style="margin-bottom: 20px;"></div>
-
-  <h2>Récapitulatif de la commande</h2>
-  <p><strong>Nom :</strong> <span id="r-nom"></span></p>
-  <p><strong>Adresse :</strong> <span id="r-adresse"></span></p>
-  <p><strong>Complément :</strong> <span id="r-complement"></span></p>
-  <p><strong>Ville :</strong> <span id="r-ville"></span></p>
-  <p><strong>Code Postal :</strong> <span id="r-codepostal"></span></p>
-  <p><strong>Email :</strong> <span id="r-email"></span></p>
-  <p><strong>Téléphone :</strong> <span id="r-telephone"></span></p>
-  <p><strong>Banh Mi :</strong> <span id="r-banhmi"></span></p>
-  <p><strong>Boissons :</strong> <span id="r-boissons"></span></p>
-</div>
-<form id="paiementForm">
-
-    <div class="section">
-      <label>Méthode de livraison</label>
-      <select id="livraison">
-        <option value="retrait">Retrait sur place (0€)</option>
-        <option value="moins5">Livraison - moins de 5 km (1.75€)</option>
-        <option value="plus5">Livraison - plus de 5 km (2.50€)</option>
-      </select>
-    </div>
-
-    <div class="section">
-      <label>Souhaitez-vous laisser un pourboire ?</label>
-      <select id="pourboire">
-        <option value="0">Aucun</option>
-        <option value="0.5">0,50 €</option>
-        <option value="1">1 €</option>
-        <option value="2">2 €</option>
-      </select>
-    </div>
-
-    <div class="section">
-      <label>Méthode de paiement</label>
-      <input type="radio" name="paiement" value="cb" checked /> Carte bancaire (CB - Stripe)<br/>
-      <input type="radio" name="paiement" value="paypal" /> PayPal<br/>
-      <input type="radio" name="paiement" value="tr" /> Titres-restaurant<br/>
-      <input type="radio" name="paiement" value="especes" /> Espèces à la livraison<br/>
-    </div>
-
-    <div class="total" id="totalAffiche">Total : 0 €</div>
-
-    <button type="submit">Payer maintenant</button>
-  </form>
+  <h1>Merci pour votre commande !</h1>
+  <div class="recap">
+    <h2>Récapitulatif</h2>
+    <ul>
+      <li><strong>Nom :</strong> <span id="r-nom"></span></li>
+      <li><strong>Adresse :</strong> <span id="r-adresse"></span></li>
+      <li><strong>Complément :</strong> <span id="r-complement"></span></li>
+      <li><strong>Ville :</strong> <span id="r-ville"></span></li>
+      <li><strong>Code Postal :</strong> <span id="r-codepostal"></span></li>
+      <li><strong>Email :</strong> <span id="r-email"></span></li>
+      <li><strong>Téléphone :</strong> <span id="r-telephone"></span></li>
+      <li><strong>Banh Mi :</strong> <span id="r-banhmi"></span></li>
+      <li><strong>Boissons :</strong> <span id="r-boissons"></span></li>
+    </ul>
+    <button class="valider" onclick="alert('Paiement simulé. Merci !')">Valider le paiement</button>
+  </div>
 
   <script>
-    const baseTotal = 15.00; // total exemple, à remplacer par vrai calcul
-    const selectLivraison = document.getElementById('livraison');
-    const selectPourboire = document.getElementById('pourboire');
-    const totalDiv = document.getElementById('totalAffiche');
-
-    function updateTotal() {
-      const livraison = selectLivraison.value === 'moins5' ? 1.75 :
-                        selectLivraison.value === 'plus5' ? 2.5 : 0;
-      const pourboire = parseFloat(selectPourboire.value);
-      const total = baseTotal + livraison + pourboire;
-      totalDiv.textContent = 'Total : ' + total.toFixed(2) + ' €';
-    }
-
-    selectLivraison.addEventListener('change', updateTotal);
-    selectPourboire.addEventListener('change', updateTotal);
-
-    document.getElementById('paiementForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert("Paiement simulé. Merci pour votre commande !");
-      window.location.href = "index.html";
-    });
-
-    updateTotal(); // initial
-
-    const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
-    const last = commandes[commandes.length - 1];
-    console.log("Dernière commande récupérée :", last);
-
-    if (last) {
-      document.getElementById('r-nom').textContent = last.nom ?? '';
-      document.getElementById('r-adresse').textContent = last.adresse ?? '';
-      document.getElementById('r-complement').textContent = last.complement ?? '';
-      document.getElementById('r-ville').textContent = last.ville ?? '';
-      document.getElementById('r-codepostal').textContent = last.codepostal ?? '';
-      document.getElementById('r-email').textContent = last.email ?? '';
-      document.getElementById('r-telephone').textContent = last.telephone ?? '';
-      document.getElementById('r-banhmi').textContent = last.banhmi ?? '';
-      document.getElementById('r-boissons').textContent = last.boissons ?? '';
-    }
-
-    const imageBanhMi = document.getElementById('image-banhmi');
-    const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
-    const last = commandes[commandes.length - 1];
-    if (last) {
-      document.getElementById('r-nom').textContent = last.nom || '';
-      document.getElementById('r-adresse').textContent = last.adresse || '';
-      document.getElementById('r-complement').textContent = last.complement || '';
-      document.getElementById('r-ville').textContent = last.ville || '';
-      document.getElementById('r-codepostal').textContent = last.codepostal || '';
-      document.getElementById('r-email').textContent = last.email || '';
-      document.getElementById('r-telephone').textContent = last.telephone || '';
-      document.getElementById('r-banhmi').textContent = last.banhmi || '';
-      document.getElementById('r-boissons').textContent = last.boissons || '';
-
-      // Ajout image banh mi si trouvé
-      if (last.banhmi) {
-        const nom = last.banhmi.toLowerCase().replaceAll(' ', '_') + '.jpg';
-        const img = document.createElement('img');
-        img.src = nom;
-        img.alt = last.banhmi;
-        img.style = "max-width: 200px; border-radius: 10px;";
-        imageBanhMi.appendChild(img);
-      }
-    }
-
     const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
     const last = commandes[commandes.length - 1];
     if (last) {
@@ -196,7 +83,6 @@
       document.getElementById('r-banhmi').textContent = last.banhmi || '';
       document.getElementById('r-boissons').textContent = last.boissons || '';
     }
-
   </script>
 </body>
 </html>
