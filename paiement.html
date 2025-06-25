@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Paiement - Banh'Mix</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
+<meta charset="utf-8"/>
+<title>Paiement - Banh'Mix</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #fff8f1;
@@ -51,25 +52,24 @@
     }
   </style>
 </head>
-<body>
-  <h1>Merci pour votre commande !</h1>
-  <div class="recap">
-    <h2>Récapitulatif</h2>
-    <ul>
-      <li><strong>Nom :</strong> <span id="r-nom"></span></li>
-      <li><strong>Adresse :</strong> <span id="r-adresse"></span></li>
-      <li><strong>Complément :</strong> <span id="r-complement"></span></li>
-      <li><strong>Ville :</strong> <span id="r-ville"></span></li>
-      <li><strong>Code Postal :</strong> <span id="r-codepostal"></span></li>
-      <li><strong>Email :</strong> <span id="r-email"></span></li>
-      <li><strong>Téléphone :</strong> <span id="r-telephone"></span></li>
-      <li><strong>Banh Mi :</strong> <span id="r-banhmi"></span></li>
-      <li><strong>Boissons :</strong> <span id="r-boissons"></span></li>
-    </ul>
-    <button class="valider" onclick="alert('Paiement simulé. Merci !')">Valider le paiement</button>
-  </div>
-
-  <script>
+<body><div id="recapitulatif" style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; background: #f9f9f9;"><h2>Récapitulatif de votre commande</h2></div>
+<h1>Merci pour votre commande !</h1>
+<div class="recap">
+<h2>Récapitulatif</h2>
+<ul>
+<li><strong>Nom :</strong> <span id="r-nom"></span></li>
+<li><strong>Adresse :</strong> <span id="r-adresse"></span></li>
+<li><strong>Complément :</strong> <span id="r-complement"></span></li>
+<li><strong>Ville :</strong> <span id="r-ville"></span></li>
+<li><strong>Code Postal :</strong> <span id="r-codepostal"></span></li>
+<li><strong>Email :</strong> <span id="r-email"></span></li>
+<li><strong>Téléphone :</strong> <span id="r-telephone"></span></li>
+<li><strong>Banh Mi :</strong> <span id="r-banhmi"></span></li>
+<li><strong>Boissons :</strong> <span id="r-boissons"></span></li>
+</ul>
+<button class="valider" onclick="alert('Paiement simulé. Merci !')">Valider le paiement</button>
+</div>
+<script>
     const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
     const last = commandes[commandes.length - 1];
     if (last) {
@@ -84,12 +84,10 @@
       document.getElementById('r-boissons').textContent = last.boissons || '';
     }
   </script>
-
 <div style="margin-top:20px;">
-  <p>Frais de livraison : <strong id="livraison">...</strong></p>
-  <p>Total (avec livraison) : <strong id="total">0.00 €</strong></p>
+<p>Frais de livraison : <strong id="livraison">...</strong></p>
+<p>Total (avec livraison) : <strong id="total">0.00 €</strong></p>
 </div>
-
 <script>
   function calculerLivraison(distance) {
     if (distance <= 3) return 1.75;
@@ -106,6 +104,20 @@
     totalElem.innerText = (panier + livraison).toFixed(2) + " €";
   }
 </script>
-
-</body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const recap = document.getElementById('recapitulatif');
+  const data = JSON.parse(localStorage.getItem('commande') || '{}');
+  if (Object.keys(data).length === 0) {
+    recap.innerHTML += "<p>Aucune commande enregistrée.</p>";
+  } else {
+    let html = "<ul>";
+    for (const [key, value] of Object.entries(data)) {
+      html += `<li><strong>${key}</strong> : ${value}</li>`;
+    }
+    html += "</ul>";
+    recap.innerHTML += html;
+  }
+});
+</script></body>
 </html>
