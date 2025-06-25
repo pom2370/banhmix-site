@@ -108,36 +108,39 @@
 <figure><img alt="Banh Mi Vegan" src="vegan.jpg"/><figcaption>Vegan</figcaption></figure>
 <figure><img alt="Banh Mi Vegan Maxi" src="vegan_maxi.jpg"/><figcaption>Vegan Maxi</figcaption></figure>
 </div>
-<script>
-    const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
-    const tbody = document.querySelector('#liste-commandes tbody');
 
-    commandes.forEach(cmd => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${cmd.email || ''}</td>
-        <td>${cmd.adresse || ''} ${cmd.complement || ''}</td>
-        <td>${cmd.menu || ''}</td>
-        <td>${cmd.ville || ''} ${cmd.codepostal || ''}</td>
-        <td>${cmd.telephone || ''}</td>
-      `;
-      tbody.appendChild(row);
-    });
-  </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const recap = document.getElementById('recapitulatif');
-  const data = JSON.parse(localStorage.getItem('commande') || '{}');
-  if (Object.keys(data).length === 0) {
-    recap.innerHTML += "<p style='text-align:center;'>Aucune commande enregistrée.</p>";
-  } else {
-    let html = "<ul style='line-height: 1.8em;'>";
-    for (const [key, value] of Object.entries(data)) {
+  const commande = JSON.parse(localStorage.getItem('commande') || '{}');
+  const banhmis = [];
+
+  for (const key in commande) {
+    if (key.toLowerCase().includes('banh') || key.toLowerCase().includes('traditionnel') || key.toLowerCase().includes('poulet') || key.toLowerCase().includes('boeuf') || key.toLowerCase().includes('canard') || key.toLowerCase().includes('vegan') || key.toLowerCase().includes('porc')) {
+      if (commande[key] === true || commande[key] === "on") {
+        banhmis.push(key);
+      }
+    }
+  }
+
+  let html = "<ul style='line-height: 1.8em;'>";
+
+  for (const [key, value] of Object.entries(commande)) {
+    if (value && typeof value === "string" && key !== "submit") {
       html += `<li><strong>${key}</strong> : ${value}</li>`;
     }
-    html += "</ul>";
-    recap.innerHTML += html;
   }
+
+  if (banhmis.length > 0) {
+    html += "<li><strong>Banh Mi commandés</strong> :<ul>";
+    banhmis.forEach(b => {
+      html += `<li>${b}</li>`;
+    });
+    html += "</ul></li>";
+  }
+
+  html += "</ul>";
+  recap.innerHTML += html;
 });
 </script></body>
 </html>
