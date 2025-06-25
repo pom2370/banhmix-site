@@ -67,7 +67,11 @@
 <body>
   <h1>Récapitulatif et Paiement</h1>
   
+
 <div id="recapitulatif" class="section">
+  <h2>Récapitulatif de la commande</h2>
+  <div id="image-banhmi" style="margin-bottom: 20px;"></div>
+
   <h2>Récapitulatif de la commande</h2>
   <p><strong>Nom :</strong> <span id="r-nom"></span></p>
   <p><strong>Adresse :</strong> <span id="r-adresse"></span></p>
@@ -137,6 +141,31 @@
     });
 
     updateTotal(); // initial
+    const imageBanhMi = document.getElementById('image-banhmi');
+    const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
+    const last = commandes[commandes.length - 1];
+    if (last) {
+      document.getElementById('r-nom').textContent = last.nom || '';
+      document.getElementById('r-adresse').textContent = last.adresse || '';
+      document.getElementById('r-complement').textContent = last.complement || '';
+      document.getElementById('r-ville').textContent = last.ville || '';
+      document.getElementById('r-codepostal').textContent = last.codepostal || '';
+      document.getElementById('r-email').textContent = last.email || '';
+      document.getElementById('r-telephone').textContent = last.telephone || '';
+      document.getElementById('r-banhmi').textContent = last.banhmi || '';
+      document.getElementById('r-boissons').textContent = last.boissons || '';
+
+      // Ajout image banh mi si trouvé
+      if (last.banhmi) {
+        const nom = last.banhmi.toLowerCase().replaceAll(' ', '_') + '.jpg';
+        const img = document.createElement('img');
+        img.src = nom;
+        img.alt = last.banhmi;
+        img.style = "max-width: 200px; border-radius: 10px;";
+        imageBanhMi.appendChild(img);
+      }
+    }
+
     const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
     const last = commandes[commandes.length - 1];
     if (last) {

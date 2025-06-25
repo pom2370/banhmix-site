@@ -44,6 +44,9 @@
       margin-top: 10px;
     }
     .checkbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -162,5 +165,73 @@
 
     });
   </script>
+
+  <div class="banhmi-gallery" style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px;">
+    <figure style="text-align: center;"><img src="traditionnel.jpg" alt="Banh Mi Traditionnel" style="width: 100%; border-radius: 8px;"><figcaption>Traditionnel</figcaption></figure>
+    <figure style="text-align: center;"><img src="traditionnel_maxi.jpg" alt="Banh Mi Traditionnel Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Traditionnel Maxi</figcaption></figure>
+    <figure style="text-align: center;"><img src="poulet.jpg" alt="Banh Mi Poulet" style="width: 100%; border-radius: 8px;"><figcaption>Poulet</figcaption></figure>
+    <figure style="text-align: center;"><img src="poulet_maxi.jpg" alt="Banh Mi Poulet Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Poulet Maxi</figcaption></figure>
+    <figure style="text-align: center;"><img src="boeuf.jpg" alt="Banh Mi Boeuf" style="width: 100%; border-radius: 8px;"><figcaption>Boeuf</figcaption></figure>
+    <figure style="text-align: center;"><img src="boeuf_maxi.jpg" alt="Banh Mi Boeuf Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Boeuf Maxi</figcaption></figure>
+    <figure style="text-align: center;"><img src="canard_laque.jpg" alt="Banh Mi Canard Laqué" style="width: 100%; border-radius: 8px;"><figcaption>Canard Laqué</figcaption></figure>
+    <figure style="text-align: center;"><img src="canard_laque_maxi.jpg" alt="Banh Mi Canard Laqué Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Canard Laqué Maxi</figcaption></figure>
+    <figure style="text-align: center;"><img src="vegan.jpg" alt="Banh Mi Vegan" style="width: 100%; border-radius: 8px;"><figcaption>Vegan</figcaption></figure>
+    <figure style="text-align: center;"><img src="vegan_maxi.jpg" alt="Banh Mi Vegan Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Vegan Maxi</figcaption></figure>
+  </div>
+
+
+<div class="banhmi-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="traditionnel.jpg" alt="Traditionnel" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Traditionnel</span>
+    <input type="checkbox" name="banhmi" value="Traditionnel">
+  </label>
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="traditionnel_maxi.jpg" alt="Traditionnel Maxi" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Traditionnel Maxi</span>
+    <input type="checkbox" name="banhmi" value="Traditionnel Maxi">
+  </label>
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="poulet.jpg" alt="Poulet" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Poulet</span>
+    <input type="checkbox" name="banhmi" value="Poulet">
+  </label>
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="poulet_maxi.jpg" alt="Poulet Maxi" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Poulet Maxi</span>
+    <input type="checkbox" name="banhmi" value="Poulet Maxi">
+  </label>
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="boeuf.jpg" alt="Boeuf" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Boeuf</span>
+    <input type="checkbox" name="banhmi" value="Boeuf">
+  </label>
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="boeuf_maxi.jpg" alt="Boeuf Maxi" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Boeuf Maxi</span>
+    <input type="checkbox" name="banhmi" value="Boeuf Maxi">
+  </label>
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="canard_laque.jpg" alt="Canard Laqué" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Canard Laqué</span>
+    <input type="checkbox" name="banhmi" value="Canard Laqué">
+  </label>
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="canard_laque_maxi.jpg" alt="Canard Laqué Maxi" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Canard Laqué Maxi</span>
+    <input type="checkbox" name="banhmi" value="Canard Laqué Maxi">
+  </label>
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="vegan.jpg" alt="Vegan" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Vegan</span>
+    <input type="checkbox" name="banhmi" value="Vegan">
+  </label>
+  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="vegan_maxi.jpg" alt="Vegan Maxi" style="width: 100%; max-width: 160px; border-radius: 10px;">
+    <span>Vegan Maxi</span>
+    <input type="checkbox" name="banhmi" value="Vegan Maxi">
+  </label>
+</div>
+
 </body>
 </html>
