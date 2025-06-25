@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Commande Banh'Mix</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Commande Banh'Mix</title>
+<style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #fffaf3;
@@ -83,63 +84,52 @@
   </style>
 </head>
 <body>
-  <h1>Commander votre Banh Mi</h1>
-  <form id="commandeForm">
-    <label>Nom complet</label>
-    <input type="text" id="nom" required />
-
-    <label>Adresse</label>
-    <input type="text" id="adresse" required />
-
-    <label>Complément d'adresse</label>
-    <input type="text" id="complement" />
-
-    <label>Ville</label>
-    <input type="text" id="ville" required />
-
-    <label>Code Postal</label>
-    <input type="text" id="codepostal" required />
-
-    <label>Téléphone</label>
-    <input type="tel" id="telephone" required />
-
-    <label>Email</label>
-    <input type="email" id="email" required />
-
-    <label>Choisissez vos Banh Mi</label>
-    <div class="checkbox-grid" id="banhmi-options">
-      <div class="checkbox-item"><input type="checkbox" value="Traditionnel"> Traditionnel</div>
-      <div class="checkbox-item"><input type="checkbox" value="Traditionnel Maxi"> Traditionnel Maxi</div>
-      <div class="checkbox-item"><input type="checkbox" value="Poulet"> Poulet</div>
-      <div class="checkbox-item"><input type="checkbox" value="Poulet Maxi"> Poulet Maxi</div>
-      <div class="checkbox-item"><input type="checkbox" value="Boeuf"> Boeuf</div>
-      <div class="checkbox-item"><input type="checkbox" value="Boeuf Maxi"> Boeuf Maxi</div>
-      <div class="checkbox-item"><input type="checkbox" value="Canard Laqué"> Canard Laqué</div>
-      <div class="checkbox-item"><input type="checkbox" value="Canard Laqué Maxi"> Canard Laqué Maxi</div>
-      <div class="checkbox-item"><input type="checkbox" value="Vegan"> Vegan</div>
-      <div class="checkbox-item"><input type="checkbox" value="Vegan Maxi"> Vegan Maxi</div>
-    </div>
-
-    <label>Boissons</label>
-    <div class="checkbox-grid" id="boisson-options">
-      <div class="checkbox-item"><input type="checkbox" value="Coca 33cl"> Coca 33cl</div>
-      <div class="checkbox-item"><input type="checkbox" value="Fanta 33cl"> Fanta 33cl</div>
-      <div class="checkbox-item"><input type="checkbox" value="Orangina 33cl"> Orangina 33cl</div>
-      <div class="checkbox-item"><input type="checkbox" value="May Tea 25cl"> May Tea 25cl</div>
-      <div class="checkbox-item"><input type="checkbox" value="Fuze Tea"> Fuze Tea</div>
-      <div class="checkbox-item"><input type="checkbox" value="Badoit 33cl"> Badoit 33cl</div>
-      <div class="checkbox-item"><input type="checkbox" value="Evian 33cl"> Evian 33cl</div>
-      <div class="checkbox-item"><input type="checkbox" value="San Pellegrino 33cl"> San Pellegrino 33cl</div>
-      <div class="checkbox-item"><input type="checkbox" value="Evian 1L"> Evian 1L</div>
-      <div class="checkbox-item"><input type="checkbox" value="Coca 1L"> Coca 1L</div>
-    </div>
-
-    <div id="total">Total estimé : à définir</div>
-
-    <button type="submit">Valider la commande</button>
-  </form>
-
-  <script>
+<h1>Commander votre Banh Mi</h1>
+<form id="commandeForm">
+<label>Nom complet</label>
+<input id="nom" required="" type="text"/>
+<label>Adresse</label>
+<input id="adresse" required="" type="text"/>
+<label>Complément d'adresse</label>
+<input id="complement" type="text"/>
+<label>Ville</label>
+<input id="ville" required="" type="text"/>
+<label>Code Postal</label>
+<input id="codepostal" required="" type="text"/>
+<label>Téléphone</label>
+<input id="telephone" required="" type="tel"/>
+<label>Email</label>
+<input id="email" required="" type="email"/>
+<label>Choisissez vos Banh Mi</label>
+<div class="checkbox-grid" id="banhmi-options">
+<div class="checkbox-item"><input type="checkbox" value="Traditionnel"/> Traditionnel</div>
+<div class="checkbox-item"><input type="checkbox" value="Traditionnel Maxi"/> Traditionnel Maxi</div>
+<div class="checkbox-item"><input type="checkbox" value="Poulet"/> Poulet</div>
+<div class="checkbox-item"><input type="checkbox" value="Poulet Maxi"/> Poulet Maxi</div>
+<div class="checkbox-item"><input type="checkbox" value="Boeuf"/> Boeuf</div>
+<div class="checkbox-item"><input type="checkbox" value="Boeuf Maxi"/> Boeuf Maxi</div>
+<div class="checkbox-item"><input type="checkbox" value="Canard Laqué"/> Canard Laqué</div>
+<div class="checkbox-item"><input type="checkbox" value="Canard Laqué Maxi"/> Canard Laqué Maxi</div>
+<div class="checkbox-item"><input type="checkbox" value="Vegan"/> Vegan</div>
+<div class="checkbox-item"><input type="checkbox" value="Vegan Maxi"/> Vegan Maxi</div>
+</div>
+<label>Boissons</label>
+<div class="checkbox-grid" id="boisson-options">
+<div class="checkbox-item"><input type="checkbox" value="Coca 33cl"/> Coca 33cl</div>
+<div class="checkbox-item"><input type="checkbox" value="Fanta 33cl"/> Fanta 33cl</div>
+<div class="checkbox-item"><input type="checkbox" value="Orangina 33cl"/> Orangina 33cl</div>
+<div class="checkbox-item"><input type="checkbox" value="May Tea 25cl"/> May Tea 25cl</div>
+<div class="checkbox-item"><input type="checkbox" value="Fuze Tea"/> Fuze Tea</div>
+<div class="checkbox-item"><input type="checkbox" value="Badoit 33cl"/> Badoit 33cl</div>
+<div class="checkbox-item"><input type="checkbox" value="Evian 33cl"/> Evian 33cl</div>
+<div class="checkbox-item"><input type="checkbox" value="San Pellegrino 33cl"/> San Pellegrino 33cl</div>
+<div class="checkbox-item"><input type="checkbox" value="Evian 1L"/> Evian 1L</div>
+<div class="checkbox-item"><input type="checkbox" value="Coca 1L"/> Coca 1L</div>
+</div>
+<div id="total">Total estimé : à définir</div>
+<button type="submit">Valider la commande</button>
+</form>
+<script>
     document.getElementById('commandeForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const commande = {
@@ -165,74 +155,125 @@
 
     });
   </script>
-
-  <div class="banhmi-gallery" style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px;">
-    <figure style="text-align: center;"><img src="traditionnel.jpg" alt="Banh Mi Traditionnel" style="width: 100%; border-radius: 8px;"><figcaption>Traditionnel</figcaption></figure>
-    <figure style="text-align: center;"><img src="traditionnel_maxi.jpg" alt="Banh Mi Traditionnel Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Traditionnel Maxi</figcaption></figure>
-    <figure style="text-align: center;"><img src="poulet.jpg" alt="Banh Mi Poulet" style="width: 100%; border-radius: 8px;"><figcaption>Poulet</figcaption></figure>
-    <figure style="text-align: center;"><img src="poulet_maxi.jpg" alt="Banh Mi Poulet Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Poulet Maxi</figcaption></figure>
-    <figure style="text-align: center;"><img src="boeuf.jpg" alt="Banh Mi Boeuf" style="width: 100%; border-radius: 8px;"><figcaption>Boeuf</figcaption></figure>
-    <figure style="text-align: center;"><img src="boeuf_maxi.jpg" alt="Banh Mi Boeuf Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Boeuf Maxi</figcaption></figure>
-    <figure style="text-align: center;"><img src="canard_laque.jpg" alt="Banh Mi Canard Laqué" style="width: 100%; border-radius: 8px;"><figcaption>Canard Laqué</figcaption></figure>
-    <figure style="text-align: center;"><img src="canard_laque_maxi.jpg" alt="Banh Mi Canard Laqué Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Canard Laqué Maxi</figcaption></figure>
-    <figure style="text-align: center;"><img src="vegan.jpg" alt="Banh Mi Vegan" style="width: 100%; border-radius: 8px;"><figcaption>Vegan</figcaption></figure>
-    <figure style="text-align: center;"><img src="vegan_maxi.jpg" alt="Banh Mi Vegan Maxi" style="width: 100%; border-radius: 8px;"><figcaption>Vegan Maxi</figcaption></figure>
-  </div>
-
-
-
+<div class="banhmi-gallery" style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px;">
+<figure style="text-align: center;"><img alt="Banh Mi Traditionnel" src="traditionnel.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Traditionnel</figcaption></figure>
+<figure style="text-align: center;"><img alt="Banh Mi Traditionnel Maxi" src="traditionnel_maxi.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Traditionnel Maxi</figcaption></figure>
+<figure style="text-align: center;"><img alt="Banh Mi Poulet" src="poulet.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Poulet</figcaption></figure>
+<figure style="text-align: center;"><img alt="Banh Mi Poulet Maxi" src="poulet_maxi.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Poulet Maxi</figcaption></figure>
+<figure style="text-align: center;"><img alt="Banh Mi Boeuf" src="boeuf.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Boeuf</figcaption></figure>
+<figure style="text-align: center;"><img alt="Banh Mi Boeuf Maxi" src="boeuf_maxi.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Boeuf Maxi</figcaption></figure>
+<figure style="text-align: center;"><img alt="Banh Mi Canard Laqué" src="canard_laque.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Canard Laqué</figcaption></figure>
+<figure style="text-align: center;"><img alt="Banh Mi Canard Laqué Maxi" src="canard_laque_maxi.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Canard Laqué Maxi</figcaption></figure>
+<figure style="text-align: center;"><img alt="Banh Mi Vegan" src="vegan.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Vegan</figcaption></figure>
+<figure style="text-align: center;"><img alt="Banh Mi Vegan Maxi" src="vegan_maxi.jpg" style="width: 100%; border-radius: 8px;"/><figcaption>Vegan Maxi</figcaption></figure>
+</div>
 <div class="banhmi-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 30px;">
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="traditionnel.jpg" alt="Traditionnel" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Traditionnel - 4.50 €</span>
-    <input type="checkbox" name="banhmi" value="Traditionnel - 4.50 €">
-  </label>
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="traditionnel_maxi.jpg" alt="Traditionnel Maxi" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Traditionnel Maxi - 5.50 €</span>
-    <input type="checkbox" name="banhmi" value="Traditionnel Maxi - 5.50 €">
-  </label>
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="poulet.jpg" alt="Poulet" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Poulet - 4.70 €</span>
-    <input type="checkbox" name="banhmi" value="Poulet - 4.70 €">
-  </label>
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="poulet_maxi.jpg" alt="Poulet Maxi" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Poulet Maxi - 5.90 €</span>
-    <input type="checkbox" name="banhmi" value="Poulet Maxi - 5.90 €">
-  </label>
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="boeuf.jpg" alt="Boeuf" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Boeuf - 4.90 €</span>
-    <input type="checkbox" name="banhmi" value="Boeuf - 4.90 €">
-  </label>
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="boeuf_maxi.jpg" alt="Boeuf Maxi" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Boeuf Maxi - 5.90 €</span>
-    <input type="checkbox" name="banhmi" value="Boeuf Maxi - 5.90 €">
-  </label>
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="canard_laque.jpg" alt="Porc Laqué" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Porc Laqué - 4.70 €</span>
-    <input type="checkbox" name="banhmi" value="Porc Laqué - 4.70 €">
-  </label>
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="canard_laque_maxi.jpg" alt="Porc Laqué Maxi" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Porc Laqué Maxi - 5.90 €</span>
-    <input type="checkbox" name="banhmi" value="Porc Laqué Maxi - 5.90 €">
-  </label>
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="vegan.jpg" alt="Vegan" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Vegan - 4.90 €</span>
-    <input type="checkbox" name="banhmi" value="Vegan - 4.90 €">
-  </label>
-  <label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="vegan_maxi.jpg" alt="Vegan Maxi" style="width: 100%; max-width: 150px; border-radius: 10px;">
-    <span>Vegan Maxi - 5.50 €</span>
-    <input type="checkbox" name="banhmi" value="Vegan Maxi - 5.50 €">
-  </label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Traditionnel" src="traditionnel.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Traditionnel - 4.50 €</span>
+<input name="banhmi" type="checkbox" value="Traditionnel - 4.50 €"/>
+</label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Traditionnel Maxi" src="traditionnel_maxi.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Traditionnel Maxi - 5.50 €</span>
+<input name="banhmi" type="checkbox" value="Traditionnel Maxi - 5.50 €"/>
+</label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Poulet" src="poulet.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Poulet - 4.70 €</span>
+<input name="banhmi" type="checkbox" value="Poulet - 4.70 €"/>
+</label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Poulet Maxi" src="poulet_maxi.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Poulet Maxi - 5.90 €</span>
+<input name="banhmi" type="checkbox" value="Poulet Maxi - 5.90 €"/>
+</label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Boeuf" src="boeuf.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Boeuf - 4.90 €</span>
+<input name="banhmi" type="checkbox" value="Boeuf - 4.90 €"/>
+</label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Boeuf Maxi" src="boeuf_maxi.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Boeuf Maxi - 5.90 €</span>
+<input name="banhmi" type="checkbox" value="Boeuf Maxi - 5.90 €"/>
+</label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Porc Laqué" src="canard_laque.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Porc Laqué - 4.70 €</span>
+<input name="banhmi" type="checkbox" value="Porc Laqué - 4.70 €"/>
+</label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Porc Laqué Maxi" src="canard_laque_maxi.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Porc Laqué Maxi - 5.90 €</span>
+<input name="banhmi" type="checkbox" value="Porc Laqué Maxi - 5.90 €"/>
+</label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Vegan" src="vegan.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Vegan - 4.90 €</span>
+<input name="banhmi" type="checkbox" value="Vegan - 4.90 €"/>
+</label>
+<label style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<img alt="Vegan Maxi" src="vegan_maxi.jpg" style="width: 100%; max-width: 150px; border-radius: 10px;"/>
+<span>Vegan Maxi - 5.50 €</span>
+<input name="banhmi" type="checkbox" value="Vegan Maxi - 5.50 €"/>
+</label>
 </div>
 
+<section>
+<h2>Banh Mi</h2>
+<div class="banhmi-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+<label style="text-align:center;">
+<img alt="Traditionnel" src="traditionnel.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Traditionnel - 4.50 €</span><br/>
+<input name="banhmi" type="checkbox" value="Traditionnel - 4.50 €"/>
+</label>
+<label style="text-align:center;">
+<img alt="Traditionnel Maxi" src="traditionnel_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Traditionnel Maxi - 5.50 €</span><br/>
+<input name="banhmi" type="checkbox" value="Traditionnel Maxi - 5.50 €"/>
+</label>
+<label style="text-align:center;">
+<img alt="Poulet" src="poulet.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Poulet - 4.70 €</span><br/>
+<input name="banhmi" type="checkbox" value="Poulet - 4.70 €"/>
+</label>
+<label style="text-align:center;">
+<img alt="Poulet Maxi" src="poulet_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Poulet Maxi - 5.90 €</span><br/>
+<input name="banhmi" type="checkbox" value="Poulet Maxi - 5.90 €"/>
+</label>
+<label style="text-align:center;">
+<img alt="Boeuf" src="boeuf.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Boeuf - 4.90 €</span><br/>
+<input name="banhmi" type="checkbox" value="Boeuf - 4.90 €"/>
+</label>
+<label style="text-align:center;">
+<img alt="Boeuf Maxi" src="boeuf_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Boeuf Maxi - 5.90 €</span><br/>
+<input name="banhmi" type="checkbox" value="Boeuf Maxi - 5.90 €"/>
+</label>
+<label style="text-align:center;">
+<img alt="Porc Laqué" src="canard_laque.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Porc Laqué - 4.70 €</span><br/>
+<input name="banhmi" type="checkbox" value="Porc Laqué - 4.70 €"/>
+</label>
+<label style="text-align:center;">
+<img alt="Porc Laqué Maxi" src="canard_laque_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Porc Laqué Maxi - 5.90 €</span><br/>
+<input name="banhmi" type="checkbox" value="Porc Laqué Maxi - 5.90 €"/>
+</label>
+<label style="text-align:center;">
+<img alt="Vegan" src="vegan.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Vegan - 4.90 €</span><br/>
+<input name="banhmi" type="checkbox" value="Vegan - 4.90 €"/>
+</label>
+<label style="text-align:center;">
+<img alt="Vegan Maxi" src="vegan_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
+<span>Vegan Maxi - 5.50 €</span><br/>
+<input name="banhmi" type="checkbox" value="Vegan Maxi - 5.50 €"/>
+</label>
+</div>
+</section>
 </body>
 </html>
