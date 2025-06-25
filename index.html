@@ -30,27 +30,29 @@
       margin-top: 15px;
       font-weight: bold;
     }
-    input, select {
+    input[type=text], input[type=email], input[type=tel] {
       width: 100%;
       padding: 8px;
       margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-    .checkbox-group {
+    .checkbox-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 10px;
       margin-top: 10px;
     }
-    .checkbox-group label {
+    .checkbox-item {
+      background: #f9f9f9;
+      padding: 8px 12px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      background: #f9f9f9;
-      padding: 6px;
-      border-radius: 6px;
-      font-weight: normal;
+      gap: 10px;
+    }
+    .checkbox-item input[type=checkbox] {
+      transform: scale(1.2);
     }
     button {
       margin-top: 20px;
@@ -97,31 +99,31 @@
     <input type="email" id="email" required />
 
     <label>Choisissez vos Banh Mi</label>
-    <div class="checkbox-group" id="banhmi-options">
-      <label><input type="checkbox" value="Traditionnel"> Traditionnel</label>
-      <label><input type="checkbox" value="Traditionnel Maxi"> Traditionnel Maxi</label>
-      <label><input type="checkbox" value="Poulet"> Poulet</label>
-      <label><input type="checkbox" value="Poulet Maxi"> Poulet Maxi</label>
-      <label><input type="checkbox" value="Boeuf"> Boeuf</label>
-      <label><input type="checkbox" value="Boeuf Maxi"> Boeuf Maxi</label>
-      <label><input type="checkbox" value="Canard Laqué"> Canard Laqué</label>
-      <label><input type="checkbox" value="Canard Laqué Maxi"> Canard Laqué Maxi</label>
-      <label><input type="checkbox" value="Vegan"> Vegan</label>
-      <label><input type="checkbox" value="Vegan Maxi"> Vegan Maxi</label>
+    <div class="checkbox-grid" id="banhmi-options">
+      <div class="checkbox-item"><input type="checkbox" value="Traditionnel"> Traditionnel</div>
+      <div class="checkbox-item"><input type="checkbox" value="Traditionnel Maxi"> Traditionnel Maxi</div>
+      <div class="checkbox-item"><input type="checkbox" value="Poulet"> Poulet</div>
+      <div class="checkbox-item"><input type="checkbox" value="Poulet Maxi"> Poulet Maxi</div>
+      <div class="checkbox-item"><input type="checkbox" value="Boeuf"> Boeuf</div>
+      <div class="checkbox-item"><input type="checkbox" value="Boeuf Maxi"> Boeuf Maxi</div>
+      <div class="checkbox-item"><input type="checkbox" value="Canard Laqué"> Canard Laqué</div>
+      <div class="checkbox-item"><input type="checkbox" value="Canard Laqué Maxi"> Canard Laqué Maxi</div>
+      <div class="checkbox-item"><input type="checkbox" value="Vegan"> Vegan</div>
+      <div class="checkbox-item"><input type="checkbox" value="Vegan Maxi"> Vegan Maxi</div>
     </div>
 
     <label>Boissons</label>
-    <div class="checkbox-group" id="boisson-options">
-      <label><input type="checkbox" value="Coca 33cl"> Coca 33cl</label>
-      <label><input type="checkbox" value="Fanta 33cl"> Fanta 33cl</label>
-      <label><input type="checkbox" value="Orangina 33cl"> Orangina 33cl</label>
-      <label><input type="checkbox" value="May Tea 25cl"> May Tea 25cl</label>
-      <label><input type="checkbox" value="Fuze Tea"> Fuze Tea</label>
-      <label><input type="checkbox" value="Badoit 33cl"> Badoit 33cl</label>
-      <label><input type="checkbox" value="Evian 33cl"> Evian 33cl</label>
-      <label><input type="checkbox" value="San Pellegrino 33cl"> San Pellegrino 33cl</label>
-      <label><input type="checkbox" value="Evian 1L"> Evian 1L</label>
-      <label><input type="checkbox" value="Coca 1L"> Coca 1L</label>
+    <div class="checkbox-grid" id="boisson-options">
+      <div class="checkbox-item"><input type="checkbox" value="Coca 33cl"> Coca 33cl</div>
+      <div class="checkbox-item"><input type="checkbox" value="Fanta 33cl"> Fanta 33cl</div>
+      <div class="checkbox-item"><input type="checkbox" value="Orangina 33cl"> Orangina 33cl</div>
+      <div class="checkbox-item"><input type="checkbox" value="May Tea 25cl"> May Tea 25cl</div>
+      <div class="checkbox-item"><input type="checkbox" value="Fuze Tea"> Fuze Tea</div>
+      <div class="checkbox-item"><input type="checkbox" value="Badoit 33cl"> Badoit 33cl</div>
+      <div class="checkbox-item"><input type="checkbox" value="Evian 33cl"> Evian 33cl</div>
+      <div class="checkbox-item"><input type="checkbox" value="San Pellegrino 33cl"> San Pellegrino 33cl</div>
+      <div class="checkbox-item"><input type="checkbox" value="Evian 1L"> Evian 1L</div>
+      <div class="checkbox-item"><input type="checkbox" value="Coca 1L"> Coca 1L</div>
     </div>
 
     <div id="total">Total estimé : à définir</div>
