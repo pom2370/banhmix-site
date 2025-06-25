@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commandes Banh'Mix</title>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #fefaf6;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #ff6f00;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #ff6f00;
+      color: white;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Commandes enregistrées</h1>
+  <table id="liste-commandes">
+    <thead>
+      <tr>
+        <th>E-mail</th>
+        <th>Adresse</th>
+        <th>Menus</th>
+        <th>Ville</th>
+        <th>Téléphone</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    Merci pour votre commande chez <strong>Banh'Mix</strong> !<br>
+    Nous la préparons avec soin et vous contacterons dès qu'elle est prête.<br>
+    N'hésitez pas à nous suivre pour découvrir nos nouveautés !
+  </div>
+
+  <script>
+    const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
+    const tbody = document.querySelector('#liste-commandes tbody');
+
+    commandes.forEach(cmd => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${cmd.email || ''}</td>
+        <td>${cmd.adresse || ''} ${cmd.complement || ''}</td>
+        <td>${cmd.menu || ''}</td>
+        <td>${cmd.ville || ''} ${cmd.codepostal || ''}</td>
+        <td>${cmd.telephone || ''}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  </script>
+</body>
+</html>
