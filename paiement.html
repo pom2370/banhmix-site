@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paiement - Banh'Mix</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf3;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #d35400;
+    }
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    input[type=radio], input[type=checkbox] {
+      margin-right: 10px;
+    }
+    select, input[type=text], input[type=number] {
+      padding: 8px;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    .total {
+      font-size: 1.3em;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #d35400;
+    }
+  </style>
+</head>
+<body>
+  <h1>Récapitulatif et Paiement</h1>
+  <form id="paiementForm">
+    <div class="section">
+      <label>Méthode de livraison</label>
+      <select id="livraison">
+        <option value="retrait">Retrait sur place (0€)</option>
+        <option value="moins5">Livraison - moins de 5 km (1.75€)</option>
+        <option value="plus5">Livraison - plus de 5 km (2.50€)</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <label>Souhaitez-vous laisser un pourboire ?</label>
+      <select id="pourboire">
+        <option value="0">Aucun</option>
+        <option value="0.5">0,50 €</option>
+        <option value="1">1 €</option>
+        <option value="2">2 €</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <label>Méthode de paiement</label>
+      <input type="radio" name="paiement" value="cb" checked /> Carte bancaire (CB - Stripe)<br/>
+      <input type="radio" name="paiement" value="paypal" /> PayPal<br/>
+      <input type="radio" name="paiement" value="tr" /> Titres-restaurant<br/>
+      <input type="radio" name="paiement" value="especes" /> Espèces à la livraison<br/>
+    </div>
+
+    <div class="total" id="totalAffiche">Total : 0 €</div>
+
+    <button type="submit">Payer maintenant</button>
+  </form>
+
+  <script>
+    const baseTotal = 15.00; // total exemple, à remplacer par vrai calcul
+    const selectLivraison = document.getElementById('livraison');
+    const selectPourboire = document.getElementById('pourboire');
+    const totalDiv = document.getElementById('totalAffiche');
+
+    function updateTotal() {
+      const livraison = selectLivraison.value === 'moins5' ? 1.75 :
+                        selectLivraison.value === 'plus5' ? 2.5 : 0;
+      const pourboire = parseFloat(selectPourboire.value);
+      const total = baseTotal + livraison + pourboire;
+      totalDiv.textContent = 'Total : ' + total.toFixed(2) + ' €';
+    }
+
+    selectLivraison.addEventListener('change', updateTotal);
+    selectPourboire.addEventListener('change', updateTotal);
+
+    document.getElementById('paiementForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Paiement simulé. Merci pour votre commande !");
+      window.location.href = "index.html";
+    });
+
+    updateTotal(); // initial
+  </script>
+</body>
+</html>
