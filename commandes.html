@@ -108,34 +108,42 @@
 <figure><img alt="Banh Mi Vegan" src="vegan.jpg"/><figcaption>Vegan</figcaption></figure>
 <figure><img alt="Banh Mi Vegan Maxi" src="vegan_maxi.jpg"/><figcaption>Vegan Maxi</figcaption></figure>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const recap = document.getElementById('recapitulatif');
   const commande = JSON.parse(localStorage.getItem('commande') || '{}');
-  const banhmis = [];
-
-  for (const key in commande) {
-    if (key.toLowerCase().includes('banh') || key.toLowerCase().includes('traditionnel') || key.toLowerCase().includes('poulet') || key.toLowerCase().includes('boeuf') || key.toLowerCase().includes('canard') || key.toLowerCase().includes('vegan') || key.toLowerCase().includes('porc')) {
-      if (commande[key] === true || commande[key] === "on") {
-        banhmis.push(key);
-      }
-    }
-  }
-
   let html = "<ul style='line-height: 1.8em;'>";
 
-  for (const [key, value] of Object.entries(commande)) {
-    if (value && typeof value === "string" && key !== "submit") {
-      html += `<li><strong>${key}</strong> : ${value}</li>`;
+  const champsTexte = ["Nom", "Prénom", "Adresse", "Complément", "Ville", "Code Postal", "Téléphone", "Email"];
+  const banhmiLabels = [
+    "Banh Mi Traditionnel", "Banh Mi Traditionnel Maxi",
+    "Banh Mi Poulet", "Banh Mi Poulet Maxi",
+    "Banh Mi Boeuf", "Banh Mi Boeuf Maxi",
+    "Banh Mi Porc Laqué", "Banh Mi Porc Laqué Maxi",
+    "Banh Mi Vegan", "Banh Mi Vegan Maxi"
+  ];
+  const boissonsLabels = [
+    "Coca 33cl", "Fanta 33cl", "Orangina 33cl", "May Tea 25cl", "Fuze Tea",
+    "Badoit 33cl", "Evian 33cl", "San Pellegrino 33cl", "Bouteille 1L"
+  ];
+
+  for (const field of champsTexte) {
+    if (commande[field]) {
+      html += `<li><strong>${field}</strong> : ${commande[field]}</li>`;
     }
   }
 
-  if (banhmis.length > 0) {
-    html += "<li><strong>Banh Mi commandés</strong> :<ul>";
-    banhmis.forEach(b => {
-      html += `<li>${b}</li>`;
-    });
+  const banhmiChoisis = banhmiLabels.filter(label => commande[label]);
+  if (banhmiChoisis.length > 0) {
+    html += "<li><strong>Banh Mi commandés :</strong><ul>";
+    banhmiChoisis.forEach(b => html += `<li>${b}</li>`);
+    html += "</ul></li>";
+  }
+
+  const boissonsChoisies = boissonsLabels.filter(label => commande[label]);
+  if (boissonsChoisies.length > 0) {
+    html += "<li><strong>Boissons :</strong><ul>";
+    boissonsChoisies.forEach(b => html += `<li>${b}</li>`);
     html += "</ul></li>";
   }
 
