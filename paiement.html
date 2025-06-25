@@ -141,6 +141,23 @@
     });
 
     updateTotal(); // initial
+
+    const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
+    const last = commandes[commandes.length - 1];
+    console.log("Dernière commande récupérée :", last);
+
+    if (last) {
+      document.getElementById('r-nom').textContent = last.nom ?? '';
+      document.getElementById('r-adresse').textContent = last.adresse ?? '';
+      document.getElementById('r-complement').textContent = last.complement ?? '';
+      document.getElementById('r-ville').textContent = last.ville ?? '';
+      document.getElementById('r-codepostal').textContent = last.codepostal ?? '';
+      document.getElementById('r-email').textContent = last.email ?? '';
+      document.getElementById('r-telephone').textContent = last.telephone ?? '';
+      document.getElementById('r-banhmi').textContent = last.banhmi ?? '';
+      document.getElementById('r-boissons').textContent = last.boissons ?? '';
+    }
+
     const imageBanhMi = document.getElementById('image-banhmi');
     const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
     const last = commandes[commandes.length - 1];
