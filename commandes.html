@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commandes Banh'Mix</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Commandes Banh'Mix</title>
+<style>
     body {
       font-family: 'Quicksand', sans-serif;
       background: #fefaf6;
@@ -75,42 +76,39 @@
     }
   </style>
 </head>
-<body>
-  <h1>Commandes enregistrées</h1>
-  <table id="liste-commandes">
-    <thead>
-      <tr>
-        <th>E-mail</th>
-        <th>Adresse</th>
-        <th>Menus</th>
-        <th>Ville</th>
-        <th>Téléphone</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-
-  <div class="footer">
-    Merci pour votre commande chez <strong>Banh'Mix</strong> !<br>
-    Nous la préparons avec soin et vous contacterons dès qu'elle est prête.<br>
+<body><div id="recapitulatif" style="margin: 30px auto; padding: 20px; max-width: 600px; border: 1px solid #ccc; border-radius: 8px; background: #f2f2f2; font-family: sans-serif;"><h2 style="text-align: center; color: #333;">Votre commande a été enregistrée</h2><p style="text-align: center; font-size: 1.1em;">Voici un récapitulatif de votre commande :</p></div>
+<h1>Commandes enregistrées</h1>
+<table id="liste-commandes">
+<thead>
+<tr>
+<th>E-mail</th>
+<th>Adresse</th>
+<th>Menus</th>
+<th>Ville</th>
+<th>Téléphone</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<div class="footer">
+    Merci pour votre commande chez <strong>Banh'Mix</strong> !<br/>
+    Nous la préparons avec soin et vous contacterons dès qu'elle est prête.<br/>
     N'hésitez pas à nous suivre pour découvrir nos nouveautés !
   </div>
-
-  <div class="banhmi-gallery">
-    <figure><img src="traditionnel.jpg" alt="Banh Mi Traditionnel"><figcaption>Traditionnel</figcaption></figure>
-    <figure><img src="traditionnel_maxi.jpg" alt="Banh Mi Traditionnel Maxi"><figcaption>Traditionnel Maxi</figcaption></figure>
-    <figure><img src="poulet.jpg" alt="Banh Mi Poulet"><figcaption>Poulet</figcaption></figure>
-    <figure><img src="poulet_maxi.jpg" alt="Banh Mi Poulet Maxi"><figcaption>Poulet Maxi</figcaption></figure>
-    <figure><img src="boeuf.jpg" alt="Banh Mi Boeuf"><figcaption>Boeuf</figcaption></figure>
-    <figure><img src="boeuf_maxi.jpg" alt="Banh Mi Boeuf Maxi"><figcaption>Boeuf Maxi</figcaption></figure>
-    <figure><img src="canard_laque.jpg" alt="Banh Mi Canard Laqué"><figcaption>Canard Laqué</figcaption></figure>
-    <figure><img src="canard_laque_maxi.jpg" alt="Banh Mi Canard Laqué Maxi"><figcaption>Canard Laqué Maxi</figcaption></figure>
-    <figure><img src="vegan.jpg" alt="Banh Mi Vegan"><figcaption>Vegan</figcaption></figure>
-    <figure><img src="vegan_maxi.jpg" alt="Banh Mi Vegan Maxi"><figcaption>Vegan Maxi</figcaption></figure>
-  </div>
-
-  <script>
+<div class="banhmi-gallery">
+<figure><img alt="Banh Mi Traditionnel" src="traditionnel.jpg"/><figcaption>Traditionnel</figcaption></figure>
+<figure><img alt="Banh Mi Traditionnel Maxi" src="traditionnel_maxi.jpg"/><figcaption>Traditionnel Maxi</figcaption></figure>
+<figure><img alt="Banh Mi Poulet" src="poulet.jpg"/><figcaption>Poulet</figcaption></figure>
+<figure><img alt="Banh Mi Poulet Maxi" src="poulet_maxi.jpg"/><figcaption>Poulet Maxi</figcaption></figure>
+<figure><img alt="Banh Mi Boeuf" src="boeuf.jpg"/><figcaption>Boeuf</figcaption></figure>
+<figure><img alt="Banh Mi Boeuf Maxi" src="boeuf_maxi.jpg"/><figcaption>Boeuf Maxi</figcaption></figure>
+<figure><img alt="Banh Mi Canard Laqué" src="canard_laque.jpg"/><figcaption>Canard Laqué</figcaption></figure>
+<figure><img alt="Banh Mi Canard Laqué Maxi" src="canard_laque_maxi.jpg"/><figcaption>Canard Laqué Maxi</figcaption></figure>
+<figure><img alt="Banh Mi Vegan" src="vegan.jpg"/><figcaption>Vegan</figcaption></figure>
+<figure><img alt="Banh Mi Vegan Maxi" src="vegan_maxi.jpg"/><figcaption>Vegan Maxi</figcaption></figure>
+</div>
+<script>
     const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
     const tbody = document.querySelector('#liste-commandes tbody');
 
@@ -126,5 +124,20 @@
       tbody.appendChild(row);
     });
   </script>
-</body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const recap = document.getElementById('recapitulatif');
+  const data = JSON.parse(localStorage.getItem('commande') || '{}');
+  if (Object.keys(data).length === 0) {
+    recap.innerHTML += "<p style='text-align:center;'>Aucune commande enregistrée.</p>";
+  } else {
+    let html = "<ul style='line-height: 1.8em;'>";
+    for (const [key, value] of Object.entries(data)) {
+      html += `<li><strong>${key}</strong> : ${value}</li>`;
+    }
+    html += "</ul>";
+    recap.innerHTML += html;
+  }
+});
+</script></body>
 </html>
