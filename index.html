@@ -2,64 +2,149 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banh'Mix - Commande</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Commande Banh'Mix</title>
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #fdf6ec;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf3;
+      margin: 0;
       padding: 20px;
     }
     h1 {
-      color: #e65100;
       text-align: center;
+      color: #d35400;
+      font-size: 2em;
     }
     form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: white;
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
-    input, select, textarea, button {
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select {
       width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border-radius: 6px;
+      padding: 8px;
+      margin-top: 5px;
       border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .checkbox-group label {
+      font-weight: normal;
     }
     button {
-      background-color: #ff9800;
+      margin-top: 20px;
+      padding: 10px;
+      background: #e67e22;
       color: white;
       border: none;
-      font-weight: bold;
+      border-radius: 6px;
       cursor: pointer;
+      font-size: 1em;
     }
     button:hover {
-      background-color: #f57c00;
+      background: #d35400;
+    }
+    #total {
+      font-weight: bold;
+      margin-top: 15px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>Commander chez Banh'Mix</h1>
-  <form onsubmit="event.preventDefault(); alert('Commande envoyée !');">
-    <label>Nom :</label>
-    <input type="text" required>
-    <label>Email :</label>
-    <input type="email" required>
-    <label>Banh Mi :</label>
-    <select required>
-      <option value="">-- Choisissez un Banh Mi --</option>
-      <option>Traditionnel</option>
-      <option>Poulet</option>
-      <option>Boeuf</option>
-    </select>
-    <label>Message :</label>
-    <textarea rows="4"></textarea>
-    <button type="submit">Envoyer</button>
+  <h1>Commander votre Banh Mi</h1>
+  <form id="commandeForm">
+    <label>Nom complet</label>
+    <input type="text" id="nom" required />
+
+    <label>Adresse</label>
+    <input type="text" id="adresse" required />
+
+    <label>Complément d'adresse</label>
+    <input type="text" id="complement" />
+
+    <label>Ville</label>
+    <input type="text" id="ville" required />
+
+    <label>Code Postal</label>
+    <input type="text" id="codepostal" required />
+
+    <label>Téléphone</label>
+    <input type="tel" id="telephone" required />
+
+    <label>Email</label>
+    <input type="email" id="email" required />
+
+    <label>Choisissez vos Banh Mi</label>
+    <div class="checkbox-group" id="banhmi-options">
+      <label><input type="checkbox" value="Traditionnel"> Traditionnel</label>
+      <label><input type="checkbox" value="Traditionnel Maxi"> Traditionnel Maxi</label>
+      <label><input type="checkbox" value="Poulet"> Poulet</label>
+      <label><input type="checkbox" value="Poulet Maxi"> Poulet Maxi</label>
+      <label><input type="checkbox" value="Boeuf"> Boeuf</label>
+      <label><input type="checkbox" value="Boeuf Maxi"> Boeuf Maxi</label>
+      <label><input type="checkbox" value="Canard Laqué"> Canard Laqué</label>
+      <label><input type="checkbox" value="Canard Laqué Maxi"> Canard Laqué Maxi</label>
+      <label><input type="checkbox" value="Vegan"> Vegan</label>
+      <label><input type="checkbox" value="Vegan Maxi"> Vegan Maxi</label>
+    </div>
+
+    <label>Boissons</label>
+    <div class="checkbox-group" id="boisson-options">
+      <label><input type="checkbox" value="Coca 33cl"> Coca 33cl</label>
+      <label><input type="checkbox" value="Fanta 33cl"> Fanta 33cl</label>
+      <label><input type="checkbox" value="Orangina 33cl"> Orangina 33cl</label>
+      <label><input type="checkbox" value="May Tea 25cl"> May Tea 25cl</label>
+      <label><input type="checkbox" value="Fuze Tea"> Fuze Tea</label>
+      <label><input type="checkbox" value="Badoit 33cl"> Badoit 33cl</label>
+      <label><input type="checkbox" value="Evian 33cl"> Evian 33cl</label>
+      <label><input type="checkbox" value="San Pellegrino 33cl"> San Pellegrino 33cl</label>
+      <label><input type="checkbox" value="Evian 1L"> Evian 1L</label>
+      <label><input type="checkbox" value="Coca 1L"> Coca 1L</label>
+    </div>
+
+    <div id="total">Total estimé : à définir</div>
+
+    <button type="submit">Valider la commande</button>
   </form>
+
+  <script>
+    document.getElementById('commandeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const commande = {
+        nom: document.getElementById('nom').value,
+        adresse: document.getElementById('adresse').value,
+        complement: document.getElementById('complement').value,
+        ville: document.getElementById('ville').value,
+        codepostal: document.getElementById('codepostal').value,
+        telephone: document.getElementById('telephone').value,
+        email: document.getElementById('email').value,
+        banhmi: Array.from(document.querySelectorAll('#banhmi-options input:checked')).map(i => i.value).join(', '),
+        boissons: Array.from(document.querySelectorAll('#boisson-options input:checked')).map(i => i.value).join(', ')
+      };
+
+      const commandes = JSON.parse(localStorage.getItem('commandes') || '[]');
+      commandes.push(commande);
+      localStorage.setItem('commandes', JSON.stringify(commandes));
+
+      alert('Commande enregistrée ! Merci.');
+      window.location.href = 'commandes.html';
+    });
+  </script>
 </body>
 </html>
