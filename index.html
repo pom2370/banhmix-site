@@ -44,16 +44,18 @@
       margin-top: 10px;
     }
     .checkbox-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      justify-content: space-between;
       background: #f9f9f9;
       padding: 8px 12px;
       border-radius: 8px;
-      display: flex; justify-content: space-between;
+      display: flex;
       align-items: center;
       gap: 10px;
     }
     .checkbox-item input[type=checkbox] {
-      margin-left: auto;
-      align-self: center;
       transform: scale(1.2);
     }
     button {
