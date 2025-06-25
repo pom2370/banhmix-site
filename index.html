@@ -219,61 +219,133 @@
 <input name="banhmi" type="checkbox" value="Vegan Maxi - 5.50 €"/>
 </label>
 </div>
-
 <section>
 <h2>Banh Mi</h2>
-<div class="banhmi-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-<label style="text-align:center;">
-<img alt="Traditionnel" src="traditionnel.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Traditionnel - 4.50 €</span><br/>
-<input name="banhmi" type="checkbox" value="Traditionnel - 4.50 €"/>
-</label>
-<label style="text-align:center;">
-<img alt="Traditionnel Maxi" src="traditionnel_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Traditionnel Maxi - 5.50 €</span><br/>
-<input name="banhmi" type="checkbox" value="Traditionnel Maxi - 5.50 €"/>
-</label>
-<label style="text-align:center;">
-<img alt="Poulet" src="poulet.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Poulet - 4.70 €</span><br/>
-<input name="banhmi" type="checkbox" value="Poulet - 4.70 €"/>
-</label>
-<label style="text-align:center;">
-<img alt="Poulet Maxi" src="poulet_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Poulet Maxi - 5.90 €</span><br/>
-<input name="banhmi" type="checkbox" value="Poulet Maxi - 5.90 €"/>
-</label>
-<label style="text-align:center;">
-<img alt="Boeuf" src="boeuf.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Boeuf - 4.90 €</span><br/>
-<input name="banhmi" type="checkbox" value="Boeuf - 4.90 €"/>
-</label>
-<label style="text-align:center;">
-<img alt="Boeuf Maxi" src="boeuf_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Boeuf Maxi - 5.90 €</span><br/>
-<input name="banhmi" type="checkbox" value="Boeuf Maxi - 5.90 €"/>
-</label>
-<label style="text-align:center;">
-<img alt="Porc Laqué" src="canard_laque.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Porc Laqué - 4.70 €</span><br/>
-<input name="banhmi" type="checkbox" value="Porc Laqué - 4.70 €"/>
-</label>
-<label style="text-align:center;">
-<img alt="Porc Laqué Maxi" src="canard_laque_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Porc Laqué Maxi - 5.90 €</span><br/>
-<input name="banhmi" type="checkbox" value="Porc Laqué Maxi - 5.90 €"/>
-</label>
-<label style="text-align:center;">
-<img alt="Vegan" src="vegan.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Vegan - 4.90 €</span><br/>
-<input name="banhmi" type="checkbox" value="Vegan - 4.90 €"/>
-</label>
-<label style="text-align:center;">
-<img alt="Vegan Maxi" src="vegan_maxi.jpg" style="width: 100%; max-width: 140px; border-radius: 10px;"/><br/>
-<span>Vegan Maxi - 5.50 €</span><br/>
-<input name="banhmi" type="checkbox" value="Vegan Maxi - 5.50 €"/>
-</label>
-</div>
+<table style="width:100%; border-collapse: collapse;">
+<thead>
+<tr style="background:#ffe0b2;">
+<th style="text-align:center; padding:10px;">Image</th>
+<th style="text-align:left; padding:10px;">Nom &amp; Prix</th>
+<th style="text-align:center; padding:10px;">Choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Traditionnel" src="traditionnel.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Traditionnel - 4.50 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Traditionnel - 4.50 €"/></td>
+</tr>
+<tr>
+<td><img alt="Traditionnel Maxi" src="traditionnel_maxi.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Traditionnel Maxi - 5.50 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Traditionnel Maxi - 5.50 €"/></td>
+</tr>
+<tr>
+<td><img alt="Poulet" src="poulet.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Poulet - 4.70 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Poulet - 4.70 €"/></td>
+</tr>
+<tr>
+<td><img alt="Poulet Maxi" src="poulet_maxi.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Poulet Maxi - 5.90 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Poulet Maxi - 5.90 €"/></td>
+</tr>
+<tr>
+<td><img alt="Boeuf" src="boeuf.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Boeuf - 4.90 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Boeuf - 4.90 €"/></td>
+</tr>
+<tr>
+<td><img alt="Boeuf Maxi" src="boeuf_maxi.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Boeuf Maxi - 5.90 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Boeuf Maxi - 5.90 €"/></td>
+</tr>
+<tr>
+<td><img alt="Porc Laqué" src="canard_laque.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Porc Laqué - 4.70 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Porc Laqué - 4.70 €"/></td>
+</tr>
+<tr>
+<td><img alt="Porc Laqué Maxi" src="canard_laque_maxi.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Porc Laqué Maxi - 5.90 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Porc Laqué Maxi - 5.90 €"/></td>
+</tr>
+<tr>
+<td><img alt="Vegan" src="vegan.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Vegan - 4.90 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Vegan - 4.90 €"/></td>
+</tr>
+<tr>
+<td><img alt="Vegan Maxi" src="vegan_maxi.jpg" style="max-width:100px; border-radius:8px;"/></td>
+<td>Vegan Maxi - 5.50 €</td>
+<td style="text-align:center;"><input name="banhmi" type="checkbox" value="Vegan Maxi - 5.50 €"/></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>Boissons</h2>
+<table style="width:100%; border-collapse: collapse; margin-top:20px;">
+<thead>
+<tr style="background:#d7efff;">
+<th style="text-align:center; padding:10px;">Image</th>
+<th style="text-align:left; padding:10px;">Nom &amp; Prix</th>
+<th style="text-align:center; padding:10px;">Choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Coca 33cl" src="coca.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>Coca-Cola 33cl - 1.50 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="Coca-Cola 33cl - 1.50 €"/></td>
+</tr>
+<tr>
+<td><img alt="Fanta 33cl" src="fanta.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>Fanta 33cl - 1.50 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="Fanta 33cl - 1.50 €"/></td>
+</tr>
+<tr>
+<td><img alt="Orangina 33cl" src="orangina.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>Orangina 33cl - 1.50 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="Orangina 33cl - 1.50 €"/></td>
+</tr>
+<tr>
+<td><img alt="May Tea 25cl" src="maytea.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>May Tea 25cl - 1.70 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="May Tea 25cl - 1.70 €"/></td>
+</tr>
+<tr>
+<td><img alt="Fuse Tea" src="fuse.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>Fuse Tea - 1.70 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="Fuse Tea - 1.70 €"/></td>
+</tr>
+<tr>
+<td><img alt="Badoit 33cl" src="badoit.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>Badoit 33cl - 1.40 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="Badoit 33cl - 1.40 €"/></td>
+</tr>
+<tr>
+<td><img alt="Evian 33cl" src="evian.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>Evian 33cl - 1.40 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="Evian 33cl - 1.40 €"/></td>
+</tr>
+<tr>
+<td><img alt="San Pellegrino 33cl" src="sanpellegrino.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>San Pellegrino 33cl - 1.40 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="San Pellegrino 33cl - 1.40 €"/></td>
+</tr>
+<tr>
+<td><img alt="Coca 1L" src="coca1l.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>Coca-Cola 1L - 2.50 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="Coca-Cola 1L - 2.50 €"/></td>
+</tr>
+<tr>
+<td><img alt="Evian 1L" src="evian1l.jpg" style="max-width:70px; border-radius:8px;"/></td>
+<td>Evian 1L - 2.00 €</td>
+<td style="text-align:center;"><input name="boisson" type="checkbox" value="Evian 1L - 2.00 €"/></td>
+</tr>
+</tbody>
+</table>
 </section>
 </body>
 </html>
