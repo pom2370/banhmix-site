@@ -84,5 +84,28 @@
       document.getElementById('r-boissons').textContent = last.boissons || '';
     }
   </script>
+
+<div style="margin-top:20px;">
+  <p>Frais de livraison : <strong id="livraison">...</strong></p>
+  <p>Total (avec livraison) : <strong id="total">0.00 €</strong></p>
+</div>
+
+<script>
+  function calculerLivraison(distance) {
+    if (distance <= 3) return 1.75;
+    else return 2.50;
+  }
+
+  const distance = 2; // Valeur simulée
+  const livraison = calculerLivraison(distance);
+  document.getElementById("livraison").innerText = livraison.toFixed(2) + " €";
+
+  const totalElem = document.getElementById("total");
+  if (totalElem) {
+    const panier = parseFloat(totalElem.innerText) || 0;
+    totalElem.innerText = (panier + livraison).toFixed(2) + " €";
+  }
+</script>
+
 </body>
 </html>
