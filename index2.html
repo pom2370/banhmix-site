@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Banh'Mix - Commande</title>
+<style>
+    body {
+      font-family: sans-serif;
+      background-color: #fdf6ec;
+      padding: 20px;
+    }
+    h1 {
+      color: #e65100;
+      text-align: center;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #f57c00;
+    }
+  </style>
+</head>
+<body>
+<h1>Commander chez Banh'Mix</h1>
+<form onsubmit="event.preventDefault(); alert('Commande envoyée !');">
+<label>Nom :</label>
+<input required="" type="text"/>
+<label>Email :</label>
+<input required="" type="email"/>
+<label>Banh Mi :</label>
+<select required="">
+<option value="">-- Choisissez un Banh Mi --</option>
+<option>Traditionnel</option>
+<option>Poulet</option>
+<option>Boeuf</option>
+</select>
+<label>Message :</label>
+<textarea rows="4"></textarea>
+<button type="submit">Envoyer</button>
+</form>
+<hr/>
+</body>
+</html>
