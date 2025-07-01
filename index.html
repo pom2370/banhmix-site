@@ -1,4 +1,4 @@
-
+<!-- HTML page mise à jour avec page de remerciement + sauvegarde dynamique -->
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -6,62 +6,203 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Banh'Mix - Commande</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&amp;display=swap" rel="stylesheet"/>
 <style>
+    :root {
+      --orange: #ff6f00;
+      --orange-dark: #e65100;
+      --background: #fefaf6;
+      --white: #ffffff;
+      --grey: #444;
+      --border: #e0e0e0;
+    }
     body {
-      font-family: sans-serif;
-      background-color: #fdf6ec;
+      font-family: 'Quicksand', sans-serif;
+      background: var(--background);
+      margin: 0;
       padding: 20px;
     }
     h1 {
-      color: #e65100;
+      color: var(--orange);
       text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
     }
     form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 950px;
+      margin: auto;
+      background: var(--white);
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
     }
-    input, select, textarea, button {
+    label {
+      display: block;
+      font-weight: 700;
+      color: var(--grey);
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 0.2s ease-in-out;
+    }
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .full {
+      grid-column: 1 / -1;
     }
     button {
-      background-color: #ff9800;
+      background: var(--orange);
       color: white;
       border: none;
-      font-weight: bold;
+      padding: 16px;
+      border-radius: 12px;
       cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+      font-weight: bold;
+      grid-column: 1 / -1;
+      transition: background 0.3s ease-in-out;
     }
     button:hover {
-      background-color: #f57c00;
+      background: var(--orange-dark);
+    }
+    .message {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-weight: bold;
+      color: green;
+      margin-top: 12px;
+    }
+    .logo {
+      display: block;
+      max-width: 200px;
+      margin: 0 auto 25px;
+    }
+    .total {
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.3rem;
+      margin-top: 20px;
+      color: var(--grey);
+      grid-column: 1 / -1;
+    }
+    .banhmi-photo {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-<h1>Commander chez Banh'Mix</h1>
-<form onsubmit="event.preventDefault(); alert('Commande envoyée !');">
-<label>Nom :</label>
-<input required="" type="text"/>
-<label>Email :</label>
-<input required="" type="email"/>
-<label>Banh Mi :</label>
-<select required="">
-<option value="">-- Choisissez un Banh Mi --</option>
-<option>Traditionnel</option>
-<option>Poulet</option>
-<option>Boeuf</option>
-</select>
-<label>Message :</label>
-<textarea rows="4"></textarea>
-<button type="submit">Envoyer</button>
+<img alt="Logo Banh'Mix" class="logo" src="banhmix_logo.png"/>
+<h1>Commande chez Banh'Mix</h1>
+<form action="https://formsubmit.co/nguyenduc.alain@hotmail.fr" id="commandeForm" method="POST">
+<input name="_subject" type="hidden" value="Nouvelle commande Banh'Mix"/>
+<input name="_autoresponse" type="hidden" value="Merci pour votre commande chez Banh'Mix ! Nous la préparons avec soin."/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_next" type="hidden" value="merci.html"/>
+<div class="full">
+<label>Menus :</label>
+<div class="checkbox-group">
+<label><input name="menu" type="checkbox" value="3"/>Menu Boisson + Dessert - 3,00€</label>
+<label><input name="menu" type="checkbox" value="2.5"/>Menu Frites + Boisson - 2,50€</label>
+<label><input name="menu" type="checkbox" value="4"/>Menu Banh Mi + Dessert + Boisson - 4,00€</label>
+</div>
+</div>
+<div class="full"><label>Choisissez vos Banh Mi :</label><div class="checkbox-group"><label><input name="Banh Mi Traditionnel" type="checkbox" value="4.5"/>Banh Mi Traditionnel - 4.50€</label><label><input name="Banh Mi Traditionnel Maxi" type="checkbox" value="5.5"/>Banh Mi Traditionnel Maxi - 5.50€</label><label><input name="Banh Mi Poulet" type="checkbox" value="4.7"/>Banh Mi Poulet - 4.70€</label><label><input name="Banh Mi Poulet Maxi" type="checkbox" value="5.9"/>Banh Mi Poulet Maxi - 5.90€</label><label><input name="Banh Mi Boeuf" type="checkbox" value="4.9"/>Banh Mi Boeuf - 4.90€</label><label><input name="Banh Mi Boeuf Maxi" type="checkbox" value="5.9"/>Banh Mi Boeuf Maxi - 5.90€</label><label><input name="Banh Mi Porc Laqué" type="checkbox" value="4.7"/>Banh Mi Porc Laqué - 4.70€</label><label><input name="Banh Mi Porc Laqué Maxi" type="checkbox" value="5.9"/>Banh Mi Porc Laqué Maxi - 5.90€</label><label><input name="Banh Mi Vegan" type="checkbox" value="4.9"/>Banh Mi Vegan - 4.90€</label><label><input name="Banh Mi Vegan Maxi" type="checkbox" value="5.5"/>Banh Mi Vegan Maxi - 5.50€</label></div></div><div class="full">
+<label for="adresse">Adresse :</label>
+<input id="adresse" name="adresse" required="" type="text"/>
+</div>
+<div>
+<label for="complement">Complément d'adresse :</label>
+<input id="complement" name="complement" type="text"/>
+</div>
+<div>
+<label for="ville">Ville :</label>
+<input id="ville" name="ville" required="" type="text"/>
+</div>
+<div>
+<label for="codepostal">Code postal :</label>
+<input id="codepostal" name="codepostal" required="" type="text"/>
+</div>
+<div class="full">
+<label for="telephone">Téléphone :</label>
+<input id="telephone" name="telephone" required="" type="tel"/>
+</div>
+<div class="full">
+<label for="email">E-mail du client :</label>
+<input id="email" name="email" required="" type="email"/>
+</div>
+<div class="total" id="totalPrix">Prix total : 0 €</div>
+<button type="submit">Valider la commande</button>
+<div class="message" id="message"></div>
 </form>
-<hr/>
-</body>
+<script>
+    const form = document.getElementById('commandeForm');
+    const totalPrix = document.getElementById('totalPrix');
+
+    form.addEventListener('change', () => {
+      let total = 0;
+      const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+      checkboxes.forEach(cb => {
+        const prix = parseFloat(cb.value);
+        if (!isNaN(prix)) total += prix;
+      });
+      totalPrix.textContent = `Prix total : ${total.toFixed(2)} €`;
+    });
+
+    form.addEventListener('submit', () => {
+      const commandes = localStorage.getItem('commandes') || '[]';
+      const liste = JSON.parse(commandes);
+      const nom = form.email.value;
+      const details = new FormData(form);
+      const resume = {};
+      for (const [key, value] of details.entries()) {
+        resume[key] = value;
+      }
+      liste.push(resume);
+      localStorage.setItem('commandes', JSON.stringify(liste));
+    });
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const checkboxGroup = document.querySelectorAll(".checkbox-group input[type='checkbox']");
+
+  const totalDiv = document.createElement("div");
+  totalDiv.id = "total";
+  totalDiv.style = "margin-top: 15px; font-weight: bold;";
+  form.appendChild(totalDiv);
+
+  function updateTotal() {
+    let total = 0;
+    checkboxGroup.forEach(cb => {
+      if (cb.checked) {
+        total += parseFloat(cb.value);
+      }
+    });
+    totalDiv.textContent = `Total de la commande : ${total.toFixed(2)} €`;
+  }
+
+  checkboxGroup.forEach(cb => cb.addEventListener("change", updateTotal));
+  updateTotal();
+});
+</script></body>
 </html>
