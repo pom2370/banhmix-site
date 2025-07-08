@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,10 +10,24 @@
     form { max-width: 800px; margin: auto; }
     label { display: block; margin-top: 10px; font-weight: bold; }
     input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
-    .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .banhmi-item { display: flex; align-items: center; justify-content: space-between; }
-    .banhmi-item label { flex: 1; }
-    .banhmi-item input[type="checkbox"] { margin-left: 10px; }
+    /* Ajustement pour les cases à cocher de Banh Mi */
+    .checkbox-group { display: block; /* Change from grid to block for single line per item */ }
+    .banhmi-item {
+      display: flex; /* Use flexbox for items */
+      align-items: center; /* Align items vertically */
+      justify-content: space-between; /* Space out label and checkbox */
+      margin-bottom: 5px; /* Add some space between items */
+    }
+    .banhmi-item label {
+      flex: 1; /* Allow label to take available space */
+      margin-top: 0; /* Remove top margin */
+      display: inline-block; /* Make label inline to be next to checkbox */
+      font-weight: normal; /* Remove bold for checkbox labels */
+    }
+    .banhmi-item input[type="checkbox"] {
+      width: auto; /* Auto width for checkbox */
+      margin-left: 10px; /* Space from label */
+    }
     button { background: #e67e22; color: white; padding: 10px 20px; border: none; cursor: pointer; margin-top: 20px; }
     table { width: 100%; margin-top: 40px; border-collapse: collapse; }
     th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
@@ -55,20 +68,20 @@
   <h2>Nos Banh Mi</h2>
   <div class="banhmi-gallery">
     <div class="banhmi-photo">
-      <img src="SandV3.jpg" alt="Banh Mi Vegan">
-      <h3>Banh Mi Vegan</h3>
-    </div>
-    <div class="banhmi-photo">
-      <img src="SandV2.jpg" alt="Banh Mi Boeuf">
-      <h3>Banh Mi Boeuf</h3>
+      <img src="SandV4.jpg" alt="Banh Mi Traditionnel">
+      <h3>Banh Mi Traditionnel</h3>
     </div>
     <div class="banhmi-photo">
       <img src="sandV1.jpg" alt="Banh Mi Poulet">
       <h3>Banh Mi Poulet</h3>
     </div>
     <div class="banhmi-photo">
-      <img src="SandV4.jpg" alt="Banh Mi Traditionnel">
-      <h3>Banh Mi Traditionnel</h3>
+      <img src="SandV2.jpg" alt="Banh Mi Boeuf">
+      <h3>Banh Mi Boeuf</h3>
+    </div>
+    <div class="banhmi-photo">
+      <img src="SandV3.jpg" alt="Banh Mi Vegan">
+      <h3>Banh Mi Vegan</h3>
     </div>
   </div>
 
@@ -103,16 +116,16 @@
 
   <label>Banh Mi</label>
   <div class="checkbox-group">
-    <div class="banhmi-item"><label>Banh Mi Traditionnel – 4.50 €</label><input type="checkbox" name="banhmi" value="Traditionnel 4.50 €"></div>
-    <div class="banhmi-item"><label>Banh Mi Traditionnel Maxi – 5.50 €</label><input type="checkbox" name="banhmi" value="Traditionnel Maxi 5.50 €"></div>
-    <div class="banhmi-item"><label>Banh Mi Poulet – 4.70 €</label><input type="checkbox" name="banhmi" value="Poulet 4.70 €"></div>
-    <div class="banhmi-item"><label>Banh Mi Poulet Maxi – 5.90 €</label><input type="checkbox" name="banhmi" value="Poulet Maxi 5.90 €"></div>
-    <div class="banhmi-item"><label>Banh Mi Boeuf – 4.90 €</label><input type="checkbox" name="banhmi" value="Boeuf 4.90 €"></div>
-    <div class="banhmi-item"><label>Banh Mi Boeuf Maxi – 5.90 €</label><input type="checkbox" name="banhmi" value="Boeuf Maxi 5.90 €"></div>
-    <div class="banhmi-item"><label>Banh Mi Porc Laqué – 4.70 €</label><input type="checkbox" name="banhmi" value="Porc Laqué 4.70 €"></div>
-    <div class="banhmi-item"><label>Banh Mi Porc Laqué Maxi – 5.90 €</label><input type="checkbox" name="banhmi" value="Porc Laqué Maxi 5.90 €"></div>
-    <div class="banhmi-item"><label>Banh Mi Vegan – 4.90 €</label><input type="checkbox" name="banhmi" value="Vegan 4.90 €"></div>
-    <div class="banhmi-item"><label>Banh Mi Vegan Maxi – 5.50 €</label><input type="checkbox" name="banhmi" value="Vegan Maxi 5.50 €"></div>
+    <div class="banhmi-item"><label for="banhmi-trad">Banh Mi Traditionnel – 4.50 €</label><input type="checkbox" id="banhmi-trad" name="banhmi" value="Traditionnel 4.50 €"></div>
+    <div class="banhmi-item"><label for="banhmi-trad-maxi">Banh Mi Traditionnel Maxi – 5.50 €</label><input type="checkbox" id="banhmi-trad-maxi" name="banhmi" value="Traditionnel Maxi 5.50 €"></div>
+    <div class="banhmi-item"><label for="banhmi-poulet">Banh Mi Poulet – 4.70 €</label><input type="checkbox" id="banhmi-poulet" name="banhmi" value="Poulet 4.70 €"></div>
+    <div class="banhmi-item"><label for="banhmi-poulet-maxi">Banh Mi Poulet Maxi – 5.90 €</label><input type="checkbox" id="banhmi-poulet-maxi" name="banhmi" value="Poulet Maxi 5.90 €"></div>
+    <div class="banhmi-item"><label for="banhmi-boeuf">Banh Mi Boeuf – 4.90 €</label><input type="checkbox" id="banhmi-boeuf" name="banhmi" value="Boeuf 4.90 €"></div>
+    <div class="banhmi-item"><label for="banhmi-boeuf-maxi">Banh Mi Boeuf Maxi – 5.90 €</label><input type="checkbox" id="banhmi-boeuf-maxi" name="banhmi" value="Boeuf Maxi 5.90 €"></div>
+    <div class="banhmi-item"><label for="banhmi-porc">Banh Mi Porc Laqué – 4.70 €</label><input type="checkbox" id="banhmi-porc" name="banhmi" value="Porc Laqué 4.70 €"></div>
+    <div class="banhmi-item"><label for="banhmi-porc-maxi">Banh Mi Porc Laqué Maxi – 5.90 €</label><input type="checkbox" id="banhmi-porc-maxi" name="banhmi" value="Porc Laqué Maxi 5.90 €"></div>
+    <div class="banhmi-item"><label for="banhmi-vegan">Banh Mi Vegan – 4.90 €</label><input type="checkbox" id="banhmi-vegan" name="banhmi" value="Vegan 4.90 €"></div>
+    <div class="banhmi-item"><label for="banhmi-vegan-maxi">Banh Mi Vegan Maxi – 5.50 €</label><input type="checkbox" id="banhmi-vegan-maxi" name="banhmi" value="Vegan Maxi 5.50 €"></div>
   </div>
 
   <label>Boissons</label>
