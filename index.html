@@ -19,6 +19,32 @@
     table { width: 100%; margin-top: 40px; border-collapse: collapse; }
     th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
     th { background-color: #f39c12; color: white; }
+
+    /* Styles pour les photos de Banh Mi */
+    .banhmi-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+      justify-items: center;
+    }
+    .banhmi-photo {
+      text-align: center;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .banhmi-photo img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+    .banhmi-photo h3 {
+      margin: 0;
+      color: #333;
+    }
   </style>
 </head>
 <body>
@@ -26,6 +52,26 @@
 <h1>Commander votre Banh Mi</h1>
 
 <form id="commandeForm">
+  <h2>Nos Banh Mi</h2>
+  <div class="banhmi-gallery">
+    <div class="banhmi-photo">
+      <img src="SandV3.jpg" alt="Banh Mi Vegan">
+      <h3>Banh Mi Vegan</h3>
+    </div>
+    <div class="banhmi-photo">
+      <img src="SandV2.jpg" alt="Banh Mi Boeuf">
+      <h3>Banh Mi Boeuf</h3>
+    </div>
+    <div class="banhmi-photo">
+      <img src="sandV1.jpg" alt="Banh Mi Poulet">
+      <h3>Banh Mi Poulet</h3>
+    </div>
+    <div class="banhmi-photo">
+      <img src="SandV4.jpg" alt="Banh Mi Traditionnel">
+      <h3>Banh Mi Traditionnel</h3>
+    </div>
+  </div>
+
   <label for="nom">Nom</label>
   <input type="text" id="nom" name="nom" required>
 
